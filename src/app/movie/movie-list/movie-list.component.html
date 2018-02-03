@@ -1,0 +1,10 @@
+<input type="text" [(ngModel)]="textParam" (keydown)="keyDown($event)"/>
+<button (click)="searchMovie()">search</button>
+
+
+<div *ngIf="movies">
+
+  <div *ngFor="let movie of movies">
+    <app-movie-item [movie]="movie" (click)="gotoDetail(movie)"></app-movie-item>
+  </div>
+</div>

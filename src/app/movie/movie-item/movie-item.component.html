@@ -1,0 +1,7 @@
+<div class="movie-item-container">
+  <div *ngIf="movie.poster">
+    <img src="{{movie.poster.mediumUrl}}" class="movie-item-img">
+  </div>
+  <div>{{movie.id}}</div>
+  <div>{{movie.name}}</div>
+</div>

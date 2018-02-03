@@ -1,0 +1,10 @@
+.movie-item-container {
+  height: 400px;
+  width: 222px;
+  border: 1px solid black;
+}
+
+.movie-item-img {
+  height: 295px;
+  width: 210px;
+}
