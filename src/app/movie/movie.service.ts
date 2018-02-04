@@ -20,16 +20,16 @@ export class MovieService {
   getMovies(text): Observable<Movie[]> {
     return this.http.get<any>(this.moviesUrl + text).map(res => {
       return res.map(m => {
-        const {id, name, image} = m.show;
-        return new Movie({id, name, poster: (image ? new Poster(image.medium, image.original) : null)});
+        const {id, name, image, genres} = m.show;
+        return new Movie({genres, id, name, poster: (image ? new Poster(image.medium, image.original) : null)});
       });
     });
   }
 
   getMovie(movieId): Observable<Movie> {
     return this.http.get<any>(this.selMovieUrl + movieId).map(res => {
-      const {id, name, image} = res;
-      return new Movie({id, name, poster: (image ? new Poster(image.medium, image.original) : null)});
+      const {id, name, image, genres, summary} = res;
+      return new Movie({genres, id, name, poster: (image ? new Poster(image.medium, image.original) : null), summary});
     });
   }
 

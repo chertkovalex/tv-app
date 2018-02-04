@@ -1,3 +1,11 @@
 <div *ngIf="movie">
-  <app-movie-item [movie]="movie"></app-movie-item>
+  <div class="selected-movie-container">
+    <h2>{{movie.name}}</h2>
+    <h4 *ngIf="movie.genres">{{movie.genres}}</h4>
+    <div *ngIf="movie.summary">{{movie.summary}}</div>
+    <div class="selected-movie-img">
+      <img *ngIf="movie.poster" src="{{movie.poster.originalUrl}}" />
+      <h2 *ngIf="!movie.poster">No Image</h2>
+    </div>
+  </div>
 </div>
